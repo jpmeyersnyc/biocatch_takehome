@@ -1,6 +1,13 @@
 console.log("App loaded");
 // As it turns out we need a UUID as is mentioned in Pt. 2
-const csid = crypto.randomUUID().toLowerCase();
+let csid = sessionStorage.getItem("customerSessionId");
+
+if (!csid) {
+  csid = crypto.randomUUID().toLowerCase();
+  sessionStorage.setItem("customerSessionId", csid);
+}
+
+console.log('csid', csid);
 
 // This will confirm the SDK has loaded.
 // Replace `DummySDK` with the actual global object name from the SDK documentation.
