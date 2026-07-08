@@ -177,6 +177,8 @@ if (makePayment) {
 }
 
 const paymentForm = document.getElementById('paymentForm');
+const paymentCard = document.querySelector('section.payment-card');
+const thanks_for_payment = document.getElementById('thanks_for_payment');
 if (paymentForm) {
   console.log('payment form loaded');
     paymentForm.addEventListener("submit", (e) => {
@@ -184,7 +186,9 @@ if (paymentForm) {
 
       // fake login redirect
       sendZapierWebhookPayment();
-      window.location.href = "account_overview.html";
+      // window.location.href = "account_overview.html";
+      paymentCard && paymentCard.classList.add('hide');
+      thanks_for_payment && thanks_for_payment.classList.remove('hide');
     });
 }
 

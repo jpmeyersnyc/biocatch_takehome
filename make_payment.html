@@ -21,8 +21,8 @@
         </div>
 
         <nav class="nav-links">
-            <a href="account_overview.html">Overview</a>
-            <a href="logout.html" id="logoutLink" class="nav-link">Logout</a>
+            <a href="account_overview.html" class="btn btn-primary nomargin">Overview</a>
+            <a href="logout.html" id="logoutLink" class="btn btn-secondary nomargin">Logout</a>
         </nav>
 
     </header>
@@ -35,7 +35,7 @@
 
             <p>Move your money like the Knicks move the ball.</p>
 
-            <form id="paymentForm">
+            <form id="paymentForm" class="">
 
                 <div class="form-group">
                     <label for="recipient">Recipient</label>
@@ -64,6 +64,12 @@
             </form>
 
         </section>
+        <div id="thanks_for_payment" class="hide">
+          <h2>Thank you for your payment!</h2>
+          <a href="/account_overview.html" id="" class="btn btn-primary">
+              Account Overview
+          </a>
+        </div>
 
     </main>
 

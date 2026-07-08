@@ -309,3 +309,12 @@ tbody tr:hover {
     font-size: 48px;
     margin-bottom: 10px;
 }
+
+.hide {
+  display: none;
+}
+section.payment-card.hide { display: none; }
+
+div#thanks_for_payment {
+    margin-top: 200px;
+}
