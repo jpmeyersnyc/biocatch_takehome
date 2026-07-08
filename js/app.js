@@ -129,31 +129,32 @@ if (loginForm) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.pathname === "/index.html") {
+  const path = window.location.pathname;
+    if (path.includes("/") || path.includes("/index.html")) {
       console.log("On the homepage!");
       cdApi.setCustomerSessionId(csid);
       cdApi.changeContext('homepage');
     }
 
-    if (window.location.pathname === "/login.html") {
+    if (path.includes("/login.html")) {
       console.log("On the login page!");
       cdApi.setCustomerSessionId(csid);
       cdApi.changeContext('login');
     }
   
-    if (window.location.pathname === "/account_overview.html") {
+    if (path.includes("/account_overview.html")) {
       console.log("Account Overview page loaded!");
       cdApi.setCustomerSessionId(csid);
       cdApi.changeContext('account_overview');
     }
   
-    if (window.location.pathname === "/make_payment.html") {
+    if (path.includes("/make_payment.html")) {
       console.log("On the make payment page!");
       cdApi.setCustomerSessionId(csid);
       cdApi.changeContext('make_payment');
     }
   
-    if (window.location.pathname === "/logout.html") {
+    if (path.includes("/logout.html")) {
       console.log("On the logout page!");
       //setCustomerSessionID not included here, because user logged out
       cdApi.changeContext('logout');
