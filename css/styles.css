@@ -1,0 +1,311 @@
+/* =========================================
+   RESET + BASE
+========================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1d1d1d;
+    background: linear-gradient(180deg, #f4f6f9 0%, #d9dde4 100%);
+    min-height: 100vh;
+}
+
+/* =========================================
+   LAYOUT HELPERS
+========================================= */
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.overview-container {
+      background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,.7),
+      rgba(0,0,0,.2),
+      transparent
+    ), url("../css/images/maney-imagination-JUJEO8f3tDY-unsplash.jpg");
+    background-size: cover;
+}
+.container.overview-container {
+    width: 100%;
+    padding: 100px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    gap: 15px;
+}
+
+.card {
+    width: 800px;
+}
+
+/* Centered full-page layout (login, homepage hero, payments) */
+.center-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,.7),
+      rgba(0,0,0,.2),
+      transparent
+    ), url("../css/images/maney-imagination-JUJEO8f3tDY-unsplash.jpg");
+    background-size: cover;
+}
+
+.form-group label {
+    text-align: start;
+    color: #0060a9;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+p.signup-link {
+    margin-top: 20px;
+}
+
+/* =========================================
+   KNICKS HEADER (shared)
+========================================= */
+
+header {
+    background: linear-gradient(90deg, #006BB6, #00539B);
+    color: white;
+    padding: 18px 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 5px solid #F58426;
+    box-shadow: 0 3px 12px rgba(0,0,0,.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+/* =========================================
+   CARDS (shared)
+========================================= */
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 26px;
+
+    border-top: 6px solid #F58426;
+    box-shadow: 0 8px 22px rgba(0,0,0,.12);
+}
+
+/* =========================================
+   BUTTON SYSTEM (FIXED - NO DUPLICATES)
+========================================= */
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+button, .btn {
+    margin-top: 15px;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all .2s ease;
+
+    text-decoration: none;
+    display: inline-block;
+    gap: 15px;
+}
+
+.nomargin { margin: 0; }
+/* Primary = Knicks orange */
+.primary,
+.btn-primary {
+    background: #F58426;
+    color: white;
+}
+
+.primary:hover,
+.btn-primary:hover {
+    background: #d96b0f;
+    transform: translateY(-2px);
+}
+
+/* Secondary = Knicks blue */
+.secondary,
+.btn-secondary {
+    background: #006BB6;
+    color: white;
+}
+
+.secondary:hover,
+.btn-secondary:hover {
+    background: #00539B;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   FORMS (login + payments shared)
+========================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #003B73;
+}
+
+input {
+    padding: 14px;
+    border: 2px solid #d5d5d5;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: .2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #F58426;
+    box-shadow: 0 0 10px rgba(245,132,38,.35);
+}
+
+/* =========================================
+   LOGIN / PAYMENT CARD STYLE (shared)
+========================================= */
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+    padding: 40px;
+
+    border-radius: 16px;
+    border-top: 8px solid #F58426;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+
+    text-align: center;
+}
+
+section.payment-card {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* =========================================
+   HERO (homepage)
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background:
+         url("../css/images/maney-imagination-JUJEO8f3tDY-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+.hero-overlay {
+  margin-top: 200px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+  margin-top: 15px;
+    color: #F58426;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero h3 {
+  margin-top: 15px;
+}
+
+.hero {
+  background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,.7),
+      rgba(0,0,0,.2),
+      transparent
+    ), url("../css/images/maney-imagination-JUJEO8f3tDY-unsplash.jpg");
+  background-size: cover;
+}
+/* =========================================
+   TABLES (dashboard/transactions)
+========================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+th {
+    background: #006BB6;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f7fb;
+}
+
+tbody tr:hover {
+    background: #e6f1fb;
+}
+
+.credit { color: #1b8f3d; font-weight: bold; }
+.debit { color: #d7263d; font-weight: bold; }
+
+.logout-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}

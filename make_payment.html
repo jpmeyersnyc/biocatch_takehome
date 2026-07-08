@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Payment | NY Knicks National Champions Bank</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <script
+  src="https://bcdn-4ff4f23f.we-stats.com/scripts/4ff4f23f/4ff4f23f.js"
+  defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <!-- SHARED HEADER (same as accounts overview) -->
+    <header class="site-header">
+
+        <div class="logo">
+            🏀 NY Knicks National Champions Bank
+        </div>
+
+        <nav class="nav-links">
+            <a href="account_overview.html">Overview</a>
+            <a href="logout.html" id="logoutLink" class="nav-link">Logout</a>
+        </nav>
+
+    </header>
+
+    <main class="hero">
+
+        <section class="payment-card">
+
+            <h1>Make a Payment</h1>
+
+            <p>Move your money like the Knicks move the ball.</p>
+
+            <form id="paymentForm">
+
+                <div class="form-group">
+                    <label for="recipient">Recipient</label>
+                    <input type="text" id="recipient" placeholder="Jalen Brunson" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="account">Account Number</label>
+                    <input type="text" id="account" placeholder="123456789" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount ($)</label>
+                    <input type="number" id="amount" placeholder="100.00" min="1" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="memo">Memo</label>
+                    <input type="text" id="memo" placeholder="Game tickets">
+                </div>
+
+                <button id="submitPayment" type="submit" class="btn btn-primary">
+                    Send Payment
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+</body>
+</html>
