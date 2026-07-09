@@ -15,6 +15,9 @@ body {
     color: #1d1d1d;
     background: linear-gradient(180deg, #f4f6f9 0%, #d9dde4 100%);
     min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* =========================================
@@ -45,7 +48,7 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    height: 100%;
+    height: calc(100vh - 75px);
     max-height: 100%;
     gap: 15px;
 }
@@ -232,7 +235,8 @@ section.payment-card {
 ========================================= */
 
 .hero {
-    height: 100vh;
+    flex: 1;
+    height: calc(100vh - 55px);
     display: flex;
     justify-content: center;
     background:
