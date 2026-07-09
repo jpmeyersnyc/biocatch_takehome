@@ -131,11 +131,10 @@ if (loginForm) {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
-    console.log("Login attempted:", email, password);
-    
-      window.location.href = "account_overview.html";
+      console.log("Login attempted:", email, password);
       console.log('cdApi', cdApi);
       sendZapierWebhookInit();
+      window.location.href = "account_overview.html";
     });
 }
 
@@ -162,11 +161,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const savedGetScoreResponse = sessionStorage.getItem("zapierGetScoreResponse");
 
       if (savedInitResponse) {
-        const data = JSON.parse(savedResponse);
+        const data = JSON.parse(savedInitResponse);
         console.log(data);
       }
       if (savedGetScoreResponse) {
-        const data = JSON.parse(savedResponse);
+        const data = JSON.parse(savedGetScoreResponse);
         console.log(data);
       }
     }
