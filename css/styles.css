@@ -232,7 +232,7 @@ section.payment-card {
 ========================================= */
 
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     background:
@@ -242,6 +242,7 @@ section.payment-card {
     text-align: center;
     color: white;
 }
+
 .hero-overlay {
   margin-top: 200px;
 }

@@ -64,7 +64,7 @@ function sendZapierWebhookInit() {
     iam: "JP Meyers"
   };
 
-  fetch("https://hooks.zapier.com/hooks/catch/1888053/bgwofce/", {
+  return fetch("https://hooks.zapier.com/hooks/catch/1888053/bgwofce/", {
     method: "POST",
     // headers: {
     //   "Content-Type": "application/json"
@@ -99,7 +99,7 @@ function sendZapierWebhookPayment() {
     iam: "JP Meyers"
   };
 
-  fetch("https://hooks.zapier.com/hooks/catch/1888053/bgwofce/", {
+  return fetch("https://hooks.zapier.com/hooks/catch/1888053/bgwofce/", {
     method: "POST",
     // headers: {
     //   "Content-Type": "application/json"
@@ -125,7 +125,8 @@ function sendZapierWebhookPayment() {
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
-  loginForm.addEventListener("submit", (e) => {
+  console.log('loginForm loaded')
+  loginForm.addEventListener("submit", async (e) => {
       e.preventDefault(); // 🚨 THIS IS REQUIRED
 
       const email = document.getElementById("email").value;
@@ -133,12 +134,17 @@ if (loginForm) {
 
       console.log("Login attempted:", email, password);
       console.log('cdApi', cdApi);
-      sendZapierWebhookInit();
+    // sendZapierWebhookInit();
+      try {
+        await sendZapierWebhookInit();
+      } catch (err) {
+          console.error("Webhook failed:", err);
+      }
       window.location.href = "account_overview.html";
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const path = window.location.pathname;
     if (path.includes("/") || path.includes("/index.html")) {
       console.log("On the homepage!");
@@ -162,11 +168,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (savedInitResponse) {
         const data = JSON.parse(savedInitResponse);
-        console.log(data);
+        console.log('savedInitResponse', data);
       }
       if (savedGetScoreResponse) {
         const data = JSON.parse(savedGetScoreResponse);
-        console.log(data);
+        console.log('savedGetScoreResponse', data);
       }
     }
   
