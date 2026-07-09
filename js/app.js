@@ -79,9 +79,11 @@ function sendZapierWebhookInit() {
   })
   .then(data => {
     console.log("Webhook successful:", data);
+    sessionStorage.setItem("zapierInitResponse", JSON.stringify(data));
   })
   .catch(error => {
     console.error("Webhook error:", error);
+    sessionStorage.setItem("zapierInitError", error.message);
   });
 }
 
@@ -112,9 +114,11 @@ function sendZapierWebhookPayment() {
   })
   .then(data => {
     console.log("Webhook successful:", data);
+    sessionStorage.setItem("zapierGetScoreResponse", JSON.stringify(data));
   })
   .catch(error => {
     console.error("Webhook error:", error);
+    sessionStorage.setItem("zapierGetScoreError", error.message);
   });
 }
 
@@ -153,6 +157,18 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Account Overview page loaded!");
       cdApi.setCustomerSessionId(csid);
       cdApi.changeContext('account_overview');
+      //show logs from successful api calls
+      const savedInitResponse = sessionStorage.getItem("zapierInitResponse");
+      const savedGetScoreResponse = sessionStorage.getItem("zapierGetScoreResponse");
+
+      if (savedInitResponse) {
+        const data = JSON.parse(savedResponse);
+        console.log(data);
+      }
+      if (savedGetScoreResponse) {
+        const data = JSON.parse(savedResponse);
+        console.log(data);
+      }
     }
   
     if (path.includes("/make_payment.html")) {
@@ -186,7 +202,6 @@ if (paymentForm) {
 
       // fake login redirect
       sendZapierWebhookPayment();
-      // window.location.href = "account_overview.html";
       paymentCard && paymentCard.classList.add('hide');
       thanks_for_payment && thanks_for_payment.classList.remove('hide');
     });
